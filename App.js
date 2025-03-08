@@ -38,7 +38,7 @@ const StackScreen = () => {
 const TabsScreen = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Sales" component={SalesList} />
+      <Tab.Screen name="Sales" component={SalesList}  />
       <Tab.Screen name="Client" component={ClientList} />
 
 

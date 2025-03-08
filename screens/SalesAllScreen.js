@@ -33,11 +33,11 @@ export const SalesList = ({ navigation }) => {
   const ItemListSales = ({ item }) => {
     return (<View style={{ flexDirection: 'row', flex: 1, borderWidth: 1, paddingVertical: 10, margin: 5, borderRadius: 4, backgroundColor: '#33415C' }}>
       <TouchableHighlight style={{ flex: 8 }} onPress={() => {
-        navigation.navigate("ClientForm")
+        navigation.navigate("ClientForm", { cedula: item.id_cliente })
       }}>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flex: 1 }}  >
-            <Text style={styles.text}> {item.id_cliente}</Text>
+            <Text style={styles.text}> {item.fecha_compra}</Text>
           </View>
 
           <View style={{ flex: 2 }}  >
@@ -56,12 +56,12 @@ export const SalesList = ({ navigation }) => {
           />
         </View>
       </TouchableHighlight>
-      
-    
+
+
     </View>
- 
-  )
-  
+
+    )
+
 
   }
 
@@ -85,7 +85,7 @@ export const SalesList = ({ navigation }) => {
       color="#002855"
       title={'NUEVOOOO'}
       onPress={() => navigation.navigate('ClientForm')}
-      style={{ justifyContent: 'flex-end', paddingHorizontal: 12, paddingTop: 550}}
+      style={{ justifyContent: 'flex-end', paddingHorizontal: 12, paddingTop: 550 }}
     />
   </View>)
 
