@@ -6,6 +6,7 @@ import FormSalesScreen from "./screens/FormSales"
 import FormClientScreen from './screens/FormClientScreen';
 import HomeScreen from './screens/HomeScreen';
 import SalesScreen from './screens/SalesScreen';
+import { SalesList } from './screens/SalesAllScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
@@ -37,7 +38,7 @@ const StackScreen = () => {
 const TabsScreen = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Sales" component={SalesScreen} />
+      <Tab.Screen name="Sales" component={SalesList} />
       <Tab.Screen name="Client" component={ClientList} />
 
 
