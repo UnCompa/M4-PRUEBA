@@ -1,6 +1,6 @@
 import { Input, Text } from '@rneui/themed'
 import React, { useState } from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { createClient } from '../services/clientServices'
 
 export default function FormClientScreen({ navigation }) {
@@ -111,6 +111,16 @@ export default function FormClientScreen({ navigation }) {
     }
     const { status } = await createClient(data)
     console.log(status)
+    if (status == 200) {
+      Alert.alert('Creado correctamente', 'Se creo el cliente correctamente', [
+        {
+          text: 'Cerrar',
+          onPress: () => navigation.goBack()
+        }
+      ])
+    } else {
+      Alert.alert('Hubo un error al crear', 'No se logro crear el cliente')
+    }
   }
   return (
     <View style={styles.container}>
